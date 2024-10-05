@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcfdjxrmvforf"]
+
+[ext_resource type="Texture2D" uid="uid://1qqk0kvlx6o6" path="res://Sprites/gnome_queen.png" id="1_puudp"]
+[ext_resource type="Texture2D" uid="uid://dn884vnihw63i" path="res://Sprites/gnome_queen_step.png" id="2_rc1is"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjvji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_puudp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rc1is")
+}],
+"loop": true,
+"name": &"gnomeQueenIdle",
+"speed": 0.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrxpl"]
+size = Vector2(48, 48)
+
+[node name="gnomeQueen" type="CharacterBody2D"]
+
+[node name="gnomequeenidle" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xjvji")
+animation = &"gnomeQueenIdle"
+autoplay = "gnomeQueenIdle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yrxpl")

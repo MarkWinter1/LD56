@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://br808nn1cho0m"]
+
+[ext_resource type="Texture2D" uid="uid://sju1pujhklcd" path="res://Sprites/gnegg.png" id="1_6gfyw"]
+[ext_resource type="Texture2D" uid="uid://dybcmyrs0s5wl" path="res://Sprites/gnegg_Step.png" id="2_m4ebj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_niciw"]
+animations = [{
+"frames": [{
+"duration": 19.0,
+"texture": ExtResource("1_6gfyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m4ebj")
+}],
+"loop": true,
+"name": &"gnegg_pulse",
+"speed": 5.0
+}]
+
+[node name="gnegg" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_niciw")
+animation = &"gnegg_pulse"
+autoplay = "gnegg_pulse"

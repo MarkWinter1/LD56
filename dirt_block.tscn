@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckbvi5md2oefx"]
+
+[ext_resource type="Texture2D" uid="uid://dmw3b4km1hadw" path="res://Sprites/dirt.png" id="1_2jckq"]
+[ext_resource type="PackedScene" uid="uid://ditsmwfq5f86a" path="res://path_block.tscn" id="2_s80vp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3ex1"]
+size = Vector2(16, 16)
+
+[node name="dirtBlock" type="StaticBody2D"]
+
+[node name="Dirt" type="Sprite2D" parent="."]
+texture = ExtResource("1_2jckq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v3ex1")
+
+[node name="Path Block" parent="." instance=ExtResource("2_s80vp")]

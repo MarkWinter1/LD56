@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b41n4840uxjoo"]
+
+[ext_resource type="Texture2D" uid="uid://bn8w52kitgwwy" path="res://Sprites/gnome.png" id="1_8nxl3"]
+[ext_resource type="Texture2D" uid="uid://qmmmg51bpwaw" path="res://Sprites/gnome_step.png" id="2_ilfl5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmhhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8nxl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ilfl5")
+}],
+"loop": true,
+"name": &"gnomeIdle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnnb"]
+size = Vector2(10, 15)
+
+[node name="Gnome" type="CharacterBody2D"]
+
+[node name="gnomedance" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tmhhj")
+animation = &"gnomeIdle"
+autoplay = "gnomeIdle"
+frame_progress = 0.535845
+
+[node name="gnome body" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rwnnb")
