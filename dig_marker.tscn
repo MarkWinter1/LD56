@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb4i5a8yr3v1x"]
+[gd_scene load_steps=4 format=3 uid="uid://bb4i5a8yr3v1x"]
 
+[ext_resource type="Script" path="res://dig_marker.gd" id="1_6trgf"]
 [ext_resource type="Texture2D" uid="uid://d4kphil5kw2k7" path="res://Sprites/dig_marker.png" id="1_17fat"]
 
-[node name="dig marker" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3wri"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_17fat")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"egg_marker_flicker",
+"speed": 3.0
+}]
 
-[node name="DigMarker" type="Sprite2D" parent="."]
+[node name="dig marker" type="Node2D"]
+script = ExtResource("1_6trgf")
+
+[node name="dig_marker_sprite" type="AnimatedSprite2D" parent="."]
 z_index = 100
-texture = ExtResource("1_17fat")
+sprite_frames = SubResource("SpriteFrames_y3wri")
+animation = &"egg_marker_flicker"
+autoplay = "egg_marker_flicker"

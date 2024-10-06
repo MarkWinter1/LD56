@@ -8,11 +8,18 @@ func _ready():
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	for marker in _scent_markers:
+		pass
 
 func add_marker(marker):
 	_scent_markers.append(marker)
+	return true
 
 func remove_marker(marker):
-	_scent_markers.
+	var i = _scent_markers.find(marker)
+	if i != -1:
+		_scent_markers.pop_at(i)
+		return true
+	else:
+		return false
 	

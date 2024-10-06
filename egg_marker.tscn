@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://w8vitsfymqp7"]
+
+[ext_resource type="Texture2D" uid="uid://dpshv0bpxkdj8" path="res://Sprites/egg_marker.png" id="1_cfv52"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2yj5"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_cfv52")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"egg_marker_flicker",
+"speed": 3.0
+}]
+
+[node name="egg_marker" type="Node2D"]
+
+[node name="take_marker_sprite" type="AnimatedSprite2D" parent="."]
+z_index = 100
+sprite_frames = SubResource("SpriteFrames_e2yj5")
+animation = &"egg_marker_flicker"
+autoplay = "egg_marker_flicker"

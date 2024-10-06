@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8fsr51wioma0"]
+
+[ext_resource type="Script" path="res://butcher_marker.gd" id="1_7x4hm"]
+[ext_resource type="Texture2D" uid="uid://2rsyxpx6tueo" path="res://Sprites/butcher_marker.png" id="1_u1n03"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wy63"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_u1n03")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"butcher_marker_flicker",
+"speed": 3.0
+}]
+
+[node name="butcher_marker" type="Node2D"]
+script = ExtResource("1_7x4hm")
+
+[node name="butcher_marker_sprite" type="AnimatedSprite2D" parent="."]
+z_index = 100
+sprite_frames = SubResource("SpriteFrames_7wy63")
+animation = &"butcher_marker_flicker"
+autoplay = "butcher_marker_flicker"
