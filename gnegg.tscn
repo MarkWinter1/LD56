@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://br808nn1cho0m"]
+[gd_scene load_steps=5 format=3 uid="uid://br808nn1cho0m"]
 
 [ext_resource type="Texture2D" uid="uid://sju1pujhklcd" path="res://Sprites/gnegg.png" id="1_6gfyw"]
 [ext_resource type="Texture2D" uid="uid://dybcmyrs0s5wl" path="res://Sprites/gnegg_Step.png" id="2_m4ebj"]
@@ -17,9 +17,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wdc7"]
+size = Vector2(14, 10)
+
 [node name="gnegg" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_niciw")
 animation = &"gnegg_pulse"
 autoplay = "gnegg_pulse"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_0wdc7")

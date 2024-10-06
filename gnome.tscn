@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b41n4840uxjoo"]
+[gd_scene load_steps=6 format=3 uid="uid://b41n4840uxjoo"]
 
+[ext_resource type="Script" path="res://GnomeScript.gd" id="1_0f41i"]
 [ext_resource type="Texture2D" uid="uid://bn8w52kitgwwy" path="res://Sprites/gnome.png" id="1_8nxl3"]
 [ext_resource type="Texture2D" uid="uid://qmmmg51bpwaw" path="res://Sprites/gnome_step.png" id="2_ilfl5"]
 
@@ -21,12 +22,13 @@ animations = [{
 size = Vector2(10, 15)
 
 [node name="Gnome" type="CharacterBody2D"]
+script = ExtResource("1_0f41i")
 
 [node name="gnomedance" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tmhhj")
 animation = &"gnomeIdle"
 autoplay = "gnomeIdle"
-frame_progress = 0.535845
+frame_progress = 0.996552
 
 [node name="gnome body" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

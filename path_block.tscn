@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ditsmwfq5f86a"]
+[gd_scene load_steps=5 format=3 uid="uid://ditsmwfq5f86a"]
 
 [ext_resource type="Texture2D" uid="uid://dgtmmafgoquq5" path="res://Sprites/Path.png" id="1_0utk1"]
+[ext_resource type="Script" path="res://path_block.gd" id="1_3rjpk"]
+[ext_resource type="PackedScene" uid="uid://ckbvi5md2oefx" path="res://dirt_block.tscn" id="2_njm3n"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1r8ao"]
 
 [node name="Path Block" type="Node2D"]
+script = ExtResource("1_3rjpk")
 
 [node name="Path" type="Sprite2D" parent="."]
 z_index = -5
 material = SubResource("CanvasItemMaterial_1r8ao")
 texture = ExtResource("1_0utk1")
+
+[node name="dirtBlock" parent="." instance=ExtResource("2_njm3n")]

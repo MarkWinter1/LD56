@@ -1,0 +1,141 @@
+[gd_scene load_steps=12 format=3 uid="uid://m7b4he3r3vfj"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_2stdi"]
+[ext_resource type="PackedScene" uid="uid://b41n4840uxjoo" path="res://gnome.tscn" id="1_sc62w"]
+[ext_resource type="Script" path="res://camera_controls.gd" id="2_4fhdh"]
+[ext_resource type="PackedScene" uid="uid://ckbvi5md2oefx" path="res://dirt_block.tscn" id="2_eevtg"]
+[ext_resource type="PackedScene" uid="uid://ditsmwfq5f86a" path="res://path_block.tscn" id="3_frcvq"]
+[ext_resource type="PackedScene" uid="uid://bcfdjxrmvforf" path="res://gnome_queen.tscn" id="3_mk177"]
+[ext_resource type="Texture2D" uid="uid://de83n8aqk8b4e" path="res://Sprites/cursor.png" id="3_ul8e4"]
+[ext_resource type="PackedScene" uid="uid://br808nn1cho0m" path="res://gnegg.tscn" id="5_wtc6a"]
+[ext_resource type="Script" path="res://ground_generator.gd" id="6_o1j2m"]
+[ext_resource type="Script" path="res://GnomeScript.gd" id="7_pwu4l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srjqe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ul8e4")
+}],
+"loop": true,
+"name": &"Cursor Blink",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2stdi")
+
+[node name="gnomeQueen" parent="." instance=ExtResource("3_mk177")]
+z_index = 1
+position = Vector2(-48, -48)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+script = ExtResource("2_4fhdh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+z_index = 4096
+sprite_frames = SubResource("SpriteFrames_srjqe")
+animation = &"Cursor Blink"
+autoplay = "Cursor Blink"
+
+[node name="paths" type="Node2D" parent="."]
+
+[node name="Path Block" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(-16, 0)
+
+[node name="Path Block2" parent="paths" instance=ExtResource("3_frcvq")]
+
+[node name="Path Block3" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(16, 0)
+
+[node name="Path Block4" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(32, 0)
+
+[node name="Path Block5" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(48, 0)
+
+[node name="Path Block6" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(48, -16)
+
+[node name="Path Block7" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(16, -16)
+
+[node name="Path Block8" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(32, -16)
+
+[node name="Path Block9" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(16, -32)
+
+[node name="Path Block10" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(32, -32)
+
+[node name="Path Block11" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(48, -32)
+
+[node name="Path Block12" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(64, 0)
+
+[node name="Path Block13" parent="paths" instance=ExtResource("3_frcvq")]
+position = Vector2(80, 0)
+
+[node name="Ground" type="Node2D" parent="."]
+script = ExtResource("6_o1j2m")
+
+[node name="dirtBlock" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-16, 16)
+
+[node name="dirtBlock2" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(0, 16)
+
+[node name="dirtBlock3" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(32, 16)
+
+[node name="dirtBlock4" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(16, 16)
+
+[node name="dirtBlock5" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(48, 16)
+
+[node name="dirtBlock6" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(64, 16)
+
+[node name="dirtBlock12" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-48, 16)
+
+[node name="dirtBlock11" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-32, -16)
+
+[node name="dirtBlock7" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-32, 16)
+
+[node name="dirtBlock10" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-48, 0)
+
+[node name="dirtBlock9" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-64, 16)
+
+[node name="dirtBlock8" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-32, 0)
+
+[node name="dirtBlock13" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-64, 0)
+
+[node name="dirtBlock14" parent="Ground" instance=ExtResource("2_eevtg")]
+position = Vector2(-48, -16)
+
+[node name="Gnomes" type="Node2D" parent="."]
+position = Vector2(-16, 0)
+
+[node name="gnome" parent="Gnomes" instance=ExtResource("1_sc62w")]
+position = Vector2(16, -16)
+script = ExtResource("7_pwu4l")
+
+[node name="gnome2" parent="Gnomes" instance=ExtResource("1_sc62w")]
+position = Vector2(0, -16)
+
+[node name="gnegg" parent="." instance=ExtResource("5_wtc6a")]
+position = Vector2(64, -16)

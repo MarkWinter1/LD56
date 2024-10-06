@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://m7b4he3r3vfj"]
+[gd_scene load_steps=12 format=3 uid="uid://m7b4he3r3vfj"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_2stdi"]
 [ext_resource type="PackedScene" uid="uid://b41n4840uxjoo" path="res://gnome.tscn" id="1_sc62w"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dbu65wwdt4sb" path="res://Sprites/skybox.png" id="5_7ivck"]
 [ext_resource type="PackedScene" uid="uid://br808nn1cho0m" path="res://gnegg.tscn" id="5_wtc6a"]
 [ext_resource type="Script" path="res://ground_generator.gd" id="6_o1j2m"]
+[ext_resource type="PackedScene" uid="uid://bb4i5a8yr3v1x" path="res://dig_marker.tscn" id="10_fii8l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_srjqe"]
 animations = [{
@@ -48,9 +49,6 @@ script = ExtResource("6_o1j2m")
 [node name="Gnomes" type="Node2D" parent="."]
 position = Vector2(-16, 0)
 
-[node name="gnegg" parent="Gnomes" instance=ExtResource("5_wtc6a")]
-position = Vector2(80, -16)
-
 [node name="gnomeQueen" parent="Gnomes" instance=ExtResource("3_mk177")]
 z_index = 1
 position = Vector2(-32, -32)
@@ -66,3 +64,9 @@ position = Vector2(-64, -16)
 
 [node name="gnome4" parent="Gnomes" instance=ExtResource("1_sc62w")]
 position = Vector2(-80, -16)
+
+[node name="gnegg" parent="." instance=ExtResource("5_wtc6a")]
+position = Vector2(64, -16)
+
+[node name="dig marker" parent="." instance=ExtResource("10_fii8l")]
+position = Vector2(32, 0)

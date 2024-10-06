@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb4i5a8yr3v1x"]
+
+[ext_resource type="Texture2D" uid="uid://d4kphil5kw2k7" path="res://Sprites/dig_marker.png" id="1_17fat"]
+
+[node name="dig marker" type="Node2D"]
+
+[node name="DigMarker" type="Sprite2D" parent="."]
+z_index = 100
+texture = ExtResource("1_17fat")
