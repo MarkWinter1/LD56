@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwocarodqt68i"]
+
+[ext_resource type="Texture2D" uid="uid://bsjcd5l5w4j8g" path="res://Sprites/dead_gnome.png" id="1_0qlfu"]
+
+[node name="dead_gnome" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
+texture = ExtResource("1_0qlfu")

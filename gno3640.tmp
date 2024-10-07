@@ -22,7 +22,6 @@ animations = [{
 size = Vector2(10, 15)
 
 [node name="Gnome" type="CharacterBody2D"]
-z_index = 7
 script = ExtResource("1_0f41i")
 
 [node name="gnomedance" type="AnimatedSprite2D" parent="."]
