@@ -6,17 +6,24 @@ var walked = []
 var target = null
 var hunger = 100 + randi()%50
 
+var ground = self.get_parent().get_parent().get_child(0)._ground_matrix
+
 func getnewtarget(newtarget):
 	target = newtarget
 	walked = []
 	
-func walkin():
+func walkin_to_target():
 	if walked[-1] != self.position:
 		walked.append(self.position / 16)
 	var xdiff = (target.position.x - self.position.x) 
-	var ydiff = (target.position.y - self.position.y) 
-	
-	
+	var ydiff = (target.position.y - self.position.y) 	
+	if randf() > abs(xdiff/(xdiff+ydiff)):
+		#if 
+		
+		position.x += 16 * sign(xdiff)
+		
+	else:
+		position.y += 16 * sign(ydiff)
 
 func mining(position, direction):
 	pass

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwhtbg58mh6f1"]
+[gd_scene load_steps=4 format=3 uid="uid://bwhtbg58mh6f1"]
 
+[ext_resource type="Script" path="res://marker.gd" id="1_4s2tx"]
 [ext_resource type="Texture2D" uid="uid://cwre2kv5wcgrf" path="res://Sprites/take_marker.png" id="1_j6oab"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fwwo2"]
@@ -17,6 +18,7 @@ animations = [{
 }]
 
 [node name="take_marker" type="Node2D"]
+script = ExtResource("1_4s2tx")
 
 [node name="take_marker_sprite" type="AnimatedSprite2D" parent="."]
 z_index = 100

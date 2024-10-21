@@ -16,4 +16,6 @@ func _process(delta):
 		Scents.time += 1
 	for marker in Scents._scent_markers:
 		pass
+		
+	self.RedDeath.position.y = Scents.time+2000
 	

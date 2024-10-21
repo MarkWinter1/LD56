@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnnb"]
 size = Vector2(10, 15)
 
-[node name="Gnome" type="CharacterBody2D"]
+[node name="Gnome" type="CharacterBody2D" groups=["gnomes"]]
 z_index = 7
 script = ExtResource("1_0f41i")
 

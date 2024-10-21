@@ -28,9 +28,6 @@ animations = [{
 [node name="Game" type="Node2D"]
 script = ExtResource("1_2stdi")
 
-[node name="Ground" type="Node2D" parent="."]
-script = ExtResource("6_o1j2m")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("2_4fhdh")
@@ -46,6 +43,9 @@ script = ExtResource("4_wfodl")
 [node name="Skybox" type="Sprite2D" parent="Camera2D"]
 texture = ExtResource("5_7ivck")
 
+[node name="Ground" type="Node2D" parent="."]
+script = ExtResource("6_o1j2m")
+
 [node name="Gnomes" type="Node2D" parent="."]
 position = Vector2(-16, 0)
 
@@ -56,16 +56,16 @@ position = Vector2(-32, -32)
 [node name="gnegg" parent="Gnomes" groups=["gnomes"] instance=ExtResource("5_wtc6a")]
 position = Vector2(80, -16)
 
-[node name="gnome" parent="Gnomes" instance=ExtResource("1_sc62w")]
+[node name="gnome" parent="Gnomes" groups=["gnomes"] instance=ExtResource("1_sc62w")]
 position = Vector2(16, -16)
 
-[node name="gnome2" parent="Gnomes" instance=ExtResource("1_sc62w")]
+[node name="gnome2" parent="Gnomes" groups=["gnomes"] instance=ExtResource("1_sc62w")]
 position = Vector2(0, -16)
 
-[node name="gnome3" parent="Gnomes" instance=ExtResource("1_sc62w")]
+[node name="gnome3" parent="Gnomes" groups=["gnomes"] instance=ExtResource("1_sc62w")]
 position = Vector2(-64, -16)
 
-[node name="gnome4" parent="Gnomes" instance=ExtResource("1_sc62w")]
+[node name="gnome4" parent="Gnomes" groups=["gnomes"] instance=ExtResource("1_sc62w")]
 position = Vector2(-80, -16)
 
 [node name="RedDeath" type="Sprite2D" parent="."]

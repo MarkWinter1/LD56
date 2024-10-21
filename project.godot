@@ -22,6 +22,10 @@ Scents="*res://scents.gd"
 
 project/assembly_name="LD56"
 
+[global_group]
+
+gnomes="all actors"
+
 [input]
 
 pan_up={

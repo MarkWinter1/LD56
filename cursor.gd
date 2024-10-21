@@ -37,6 +37,7 @@ func _process(delta):
 		Scents.add_marker(mark)
 		mark.global_position = get_parent().position
 		mark.scale = self.scale
+		mark.current_workers.resize(self.scale.x ** 2)
 
 	if Input.is_action_just_pressed("place_butcher_marker"):
 		var mark = butcher_mark.instantiate()
@@ -44,6 +45,7 @@ func _process(delta):
 		Scents.add_marker(mark)
 		mark.global_position = get_parent().position
 		mark.scale = self.scale
+		mark.current_workers.resize(self.scale.x ** 2)
 		
 	if Input.is_action_just_pressed("place_take_marker"):
 		var mark = take_mark.instantiate()
@@ -51,6 +53,7 @@ func _process(delta):
 		Scents.add_marker(mark)
 		mark.global_position = get_parent().position
 		mark.scale = self.scale
+		mark.current_workers.resize(self.scale.x ** 2)
 
 	if Input.is_action_just_pressed("place_egg_marker"):
 		var mark = egg_mark.instantiate()
@@ -58,3 +61,4 @@ func _process(delta):
 		Scents.add_marker(mark)
 		mark.global_position = get_parent().position
 		mark.scale = self.scale
+		mark.current_workers.resize(self.scale.x ** 2)

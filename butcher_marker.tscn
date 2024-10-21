@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8fsr51wioma0"]
 
-[ext_resource type="Script" path="res://butcher_marker.gd" id="1_7x4hm"]
+[ext_resource type="Script" path="res://marker.gd" id="1_h1iix"]
 [ext_resource type="Texture2D" uid="uid://2rsyxpx6tueo" path="res://Sprites/butcher_marker.png" id="1_u1n03"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7wy63"]
@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [node name="butcher_marker" type="Node2D"]
-script = ExtResource("1_7x4hm")
+script = ExtResource("1_h1iix")
 
 [node name="butcher_marker_sprite" type="AnimatedSprite2D" parent="."]
 z_index = 100
