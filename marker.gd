@@ -1,6 +1,6 @@
 extends Node2D
 
-var current_workers
+var current_workers = []
 var marker_type = ""
 
 # Called when the node enters the scene tree for the first time.

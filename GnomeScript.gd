@@ -6,7 +6,9 @@ var walked = []
 var target = null
 var hunger = 100 + randi()%50
 
-var ground = self.get_parent().get_parent().get_child(0)._ground_matrix
+func ready():
+	
+	var ground = self.get_parent().get_parent().get_child(0)._block_matrix
 
 func getnewtarget(newtarget):
 	target = newtarget
@@ -31,7 +33,7 @@ func mining(position, direction):
 
 func _physics_process(delta):
 	if Scents.time % 10 == 0:
-		print("gnomes acting")
+		#print("gnomes acting")
 		if hunger == 0: 
 			if randf() < 0.05:
 				die()

@@ -44,6 +44,7 @@ frame_progress = 0.912498
 script = ExtResource("4_wfodl")
 
 [node name="Skybox" type="Sprite2D" parent="Camera2D"]
+z_index = -1000
 texture = ExtResource("5_7ivck")
 
 [node name="Gnomes" type="Node2D" parent="."]
